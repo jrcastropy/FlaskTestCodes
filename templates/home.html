@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Sample</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+        </head>
+
+        <body>
+            <form method="POST" action="" enctype="multipart/form-data">
+                {{ form.hidden_tag() }}
+                <div>{{ form.inp1.label }}</div>
+                <div>   
+                    {% if form.inp1.errors %}
+                        {{ form.inp1 }}
+                        <div>
+                            {% for errors in form.inp1.errors %}
+                              <span>{{ errors }}</span>
+                            {% endfor %}
+                        </div>
+                    {%  else %}
+                      {{ form.inp1 }}
+                    {%  endif %}
+                </div>
+                <div>{{ form.subm }}</div>
+            </form>
+
+        </body>
+    </html>
